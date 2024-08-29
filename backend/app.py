@@ -251,7 +251,7 @@ import dotenv
 import os
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS to allow requests from the frontend
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Enable CORS to allow requests from the frontend
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 dotenv.load_dotenv()
